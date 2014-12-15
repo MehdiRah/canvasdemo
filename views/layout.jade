@@ -3,12 +3,25 @@ html
   head
     title #{title} - My Site
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css');
   body
     header
       h1 @MehdiRah Salesforce Canvas App Demo
     .container
       .main-content
+        div 
+          .btn-group 
+          role group 
+          aria-label ...
+            button
+              type button
+                .btn 
+                .btn-sucess
+              type  button
+                .btn
+                .btn-warning
         block content
+
       .sidebar
         block sidebar
     footer
