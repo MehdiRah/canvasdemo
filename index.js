@@ -23,7 +23,6 @@ app.get('/', function (req, res) {
   res.render('index',
   { title : 'Home' }
   )
-  // response.send('Hello World!');
 })
 
 app.listen(app.get('port'), function() {
