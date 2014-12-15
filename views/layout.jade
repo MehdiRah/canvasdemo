@@ -9,13 +9,10 @@ html
       h1 @MehdiRah Salesforce Canvas App Demo
     .container
       .main-content
-        div 
-          .btn-group role group aria-label ...
-            button
-              type button .btn .btn-sucess
-              type button .btn .btn-warning
-        block content
-
+        div(class=".btn-group" role="group" aria-label="...")
+          button(type="button", class="btn btn-success")
+          button(type="button", class="btn btn-warning")
+          block content
       .sidebar
         block sidebar
     footer
