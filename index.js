@@ -1,4 +1,6 @@
-var express = require('express')
+var express = require('express'),
+    stylus = require('stylus'), 
+    nib = require('nib');
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
@@ -18,10 +20,10 @@ app.use(stylus.middleware(
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', function (req, res) {
-  // res.render('index',
-  // { title : 'Home' }
-  // )
-  response.send('Hello World!');
+  res.render('index',
+  { title : 'Home' }
+  )
+  // response.send('Hello World!');
 })
 
 app.listen(app.get('port'), function() {
