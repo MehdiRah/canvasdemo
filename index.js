@@ -94,7 +94,7 @@ app.get('/callback', function(request, response) {
         console.log( '<Mehdi>:Payload  ' + JSON.stringify(payload));
         console.log( '<Mehdi>:error  ' + JSON.stringify(error));
     });
-    return response.render('index',{ title : 'Home', scripts: ['scripts/jshelper.js'] }); 
+    return response.render('index',{ title : 'Home' }); 
 });
 
 
