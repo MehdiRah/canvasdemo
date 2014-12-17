@@ -41,7 +41,7 @@ app.get("/", function(request, response) {
     var uri = oauth2.getAuthorizationUrl({
         redirect_uri: callbackUrl,
         client_id: consumerKey,
-        scope: scopeval;
+        scope: scopeval
     });
 
     console.log( '<Mehdi>: ' + JSON.stringify( response ));
