@@ -50,7 +50,7 @@ app.get("/", function(request, response) {
 
 console.log('<Mehdi>: pre callback');
 
-app.get('/oauth/callback', function(request, response) {
+app.get('/callback', function(request, response) {
     var authorizationCode = request.param('code');
 
     oauth2.authenticate({
