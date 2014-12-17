@@ -28,11 +28,13 @@ app.use(stylus.middleware(
 
 app.use(express.static(__dirname + '/public'))
 
-app.get('/', function (req, res) {
-  res.render('index',
-  { title : 'Home' }
-  )
-});
+// app.get('/', function (req, res) {
+//   res.render('index',
+//   { title : 'Home' }
+//   )
+// });
+
+console.log('<Mehdi>: pre OAuth stuff');
 
 app.get("/", function(request, response) {
     var uri = oauth2.getAuthorizationUrl({
@@ -41,10 +43,12 @@ app.get("/", function(request, response) {
         scope: 'api'
     });
 
-    console.log( '<M>' , response);
+    console.log( '<Mehdi>: ' + response);
 
     return response.redirect(uri);
 });
+
+console.log('<Mehdi>: pre callback');
 
 app.get('/oauth/callback', function(request, response) {
     var authorizationCode = request.param('code');
@@ -85,6 +89,9 @@ app.get('/oauth/callback', function(request, response) {
 
         Authorization: OAuth 00D50000000IZ3Z!AQ0AQDpEDKYsn7ioKug2aSmgCjgrPjG...
         */
+
+        console.log( '<Mehdi>:Payload  ' + payload);
+        console.log( '<Mehdi>:error  ' + error);
     });    
 });
 
