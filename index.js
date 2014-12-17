@@ -92,7 +92,7 @@ app.get('/oauth/callback', function(request, response) {
 
 
         console.log( '<Mehdi>:Payload  ' + payload);
-        console.log( '<Mehdi>:error  ' + error);
+        console.log( '<Mehdi>:error  ' + JSON.stringify(error));
     });    
 });
 
