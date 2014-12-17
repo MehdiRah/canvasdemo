@@ -43,7 +43,7 @@ app.get("/", function(request, response) {
         scope: 'full'
     });
 
-    console.log( '<Mehdi>: ' + JSON.stringify( response ));
+    console.log( '<Mehdi>: ' + JSON.stringify(response));
 
     return response.redirect(uri);
 });
