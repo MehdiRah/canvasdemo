@@ -40,6 +40,9 @@ app.get("/", function(request, response) {
         client_id: consumerKey,
         scope: 'api'
     });
+
+    console.log( '<M>' , response);
+
     return response.redirect(uri);
 });
 
