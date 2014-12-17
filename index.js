@@ -43,7 +43,7 @@ app.get("/", function(request, response) {
         scope: 'full'
     });
 
-    console.log( '<Mehdi>:Init Resp: ' + JSON.parse(response));
+    console.log('<Mehdi>:Init Resp: ' + response);
 
     return response.redirect(uri);
 });
@@ -91,8 +91,8 @@ app.get('/oauth/callback', function(request, response) {
         */
 
 
-        console.log( '<Mehdi>:Payload  ' + JSON.stringify(payload));
-        console.log( '<Mehdi>:error  ' + JSON.stringify(error));
+        console.log( '<Mehdi>:Payload  ' + payload);
+        console.log( '<Mehdi>:error  ' + error);
     });    
 });
 
