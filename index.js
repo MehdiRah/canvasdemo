@@ -5,7 +5,8 @@ var express = require('express'),
 
 var callbackUrl = "https://mehdirahcanvasdemo.herokuapp.com/callback",
     consumerKey = "3MVG9A_f29uWoVQv37e8wuVT0KfIksy7Y6HhQjdbxzJM9GMzV3YDPDs.y_ZHlKBU.TMbNvXyNQEne.mFzry7P",
-    consumerSecret = "1463378115517446037";
+    consumerSecret = "1463378115517446037",
+    scopeval = "full";
 
 var app = express();
 
@@ -40,10 +41,10 @@ app.get("/", function(request, response) {
     var uri = oauth2.getAuthorizationUrl({
         redirect_uri: callbackUrl,
         client_id: consumerKey,
-        scope: 'api'
+        scope: scopeval;
     });
 
-    console.log( '<Mehdi>: ' + response);
+    console.log( '<Mehdi>: ' + JSON.stringify( response ));
 
     return response.redirect(uri);
 });
@@ -90,8 +91,8 @@ app.get('/oauth/callback', function(request, response) {
         Authorization: OAuth 00D50000000IZ3Z!AQ0AQDpEDKYsn7ioKug2aSmgCjgrPjG...
         */
 
-        console.log( '<Mehdi>:Payload  ' + payload);
-        console.log( '<Mehdi>:error  ' + error);
+        console.log( '<Mehdi>:Payload  ' + JSON.stringify(payload));
+        console.log( '<Mehdi>:error  ' + JSON.stringify(error));
     });    
 });
 
