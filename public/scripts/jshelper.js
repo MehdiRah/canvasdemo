@@ -1,5 +1,6 @@
 $(function(){
 	console.log('canvas app init');
+	console.log(aoPageData);
 	$('#btngreen').on('click', function(){
 		console.log('Click Green');
 	});
