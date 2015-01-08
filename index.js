@@ -96,7 +96,7 @@ app.get('/callback', function(request, response) {
 
         console.log( '<Mehdi>:Payload  ' + JSON.stringify(payload));
         console.log( '<Mehdi>:error  ' + JSON.stringify(error));
-        oPayload = payload;
+        sPayload = JSON.stringify(payload);
     });
     var aoPageData = {
         'pageData':[
@@ -104,7 +104,7 @@ app.get('/callback', function(request, response) {
             {   'okeys' : oPayload  }
         ]
     }
-    return response.render('index',aoPageData); 
+    return response.render('index',{ title   : 'Home', conns : sPayload }); 
 });
 
 
