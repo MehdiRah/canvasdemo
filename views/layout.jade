@@ -3,7 +3,7 @@ html
   head
     title #{pageData[0].title} - Canvas App Demo
     script(type='text/javascript').
-      oKeys = JSON.stringify(#{pageData[1]});
+      var oKeys = JSON.parse(#{pageData[1].okeys});
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
     script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
