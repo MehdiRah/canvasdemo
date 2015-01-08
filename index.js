@@ -88,6 +88,9 @@ app.get('/callback', function(request, response) {
         each request:
 
         Authorization: OAuth 00D50000000IZ3Z!AQ0AQDpEDKYsn7ioKug2aSmgCjgrPjG...
+
+        Note: Instance ID something like this: '_CanvasDemo'
+        Breakdown: Instance ID Breakdown: '_<ApplicationName>:<Id>'
         */
 
 
