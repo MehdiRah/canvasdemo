@@ -52,7 +52,7 @@ console.log('<Mehdi>: pre callback');
 
 app.get('/callback', function(request, response) {
     var authorizationCode = request.param('code');
-    var sPayload;
+    var sPayload='something';
     oauth2.authenticate({
         redirect_uri: callbackUrl,
         client_id: consumerKey,
