@@ -101,7 +101,7 @@ app.get('/callback', function(request, response) {
     var aoPageData = {
         'pageData':[
             {   title   : 'Home'    },
-            {   'okeys' : oPayload  }
+            {   'okeys' : sPayload  }
         ]
     }
     return response.render('index',{ title   : 'Home', conns : sPayload }); 
