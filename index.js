@@ -52,7 +52,7 @@ console.log('<Mehdi>: pre callback');
 
 app.get('/callback', function(request, response) {
     var authorizationCode = request.param('code');
-
+    var oPayload;
     oauth2.authenticate({
         redirect_uri: callbackUrl,
         client_id: consumerKey,
@@ -96,8 +96,15 @@ app.get('/callback', function(request, response) {
 
         console.log( '<Mehdi>:Payload  ' + JSON.stringify(payload));
         console.log( '<Mehdi>:error  ' + JSON.stringify(error));
+        oPayload = payload;
     });
-    return response.render('index',{ title : 'Home' }); 
+    var aoPageData = {
+        'pageData':[
+            {   title   : 'Home'    },
+            {   okeys   : oPayload  }
+        ]
+    }
+    return response.render('index',aoPageData); 
 });
 
 
