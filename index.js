@@ -113,6 +113,7 @@ app.get('/callback', function(request, response) {
     return response.render('index',{ title   : 'Home'}); 
 });
 
+// ****************** Attempt to Implement Prommise.js *******************
 // function getOauthKeys(authorizationCode){
 //     // sPayload = 'empty';
 
@@ -138,6 +139,7 @@ app.get('/callback', function(request, response) {
 //         }, reject);
 //     });
 // }
+// ****************** Attempt to Implement Prommise.js *******************
 
 app.get("/ajaxOauthKeys", function(req, res) {
     res.send(JSON.stringify(oPayload));
