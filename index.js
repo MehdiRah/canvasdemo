@@ -125,7 +125,7 @@ function getOauthKeys(authorizationCode){
                 console.log( '<Mehdi>:Async Payload  ' + JSON.stringify(payload));
                 console.log( '<Mehdi>:Async error  ' + JSON.stringify(error));
                 sPayload = JSON.stringify(payload);       
-        }).then(function(res){
+        }).done(function(res){
             try{
                 console.log('<Mehdi>:Async res :' + res);
                 // console.log('<Mehdi>:Async res parsed :' + JSON.parse(res));
