@@ -123,7 +123,7 @@ function getOauthKeys(authorizationCode){
                 //sPayload = JSON.stringify(payload);       
         }).then(function(res){
             try{
-                JSON.stringify(res);
+                JSON.stringify(res.payload);
             } catch(ex) {
                 reject(ex);
             }
