@@ -106,7 +106,7 @@ app.get('/callback', function(request, response) {
     //     ]
     // }
 
-    console.log('<Mehdi> target sPayload parsed: ' +  sPayload);
+    console.log('<Mehdi> target sPayload parsed: ' +  JSON.Parse(sPayload));
     console.log('<Mehdi> target sPayload stringified: ' +  JSON.stringify(sPayload));
     return response.render('index',{ title   : 'Home', conns : sPayload }); 
 });
@@ -126,6 +126,9 @@ function getOauthKeys(authorizationCode){
                 //sPayload = JSON.stringify(payload);       
         }).then(function(res){
             try{
+                console.log('<Mehdi>:Async res :' + res);
+                console.log('<Mehdi>:Async res parsed :' + JSON.Parse(res));
+                console.log('<Mehdi>:Async res stringified: ' +  JSON.stringify(res));
                 JSON.Parse(res);
             } catch(ex) {
                 reject(ex);
