@@ -53,7 +53,7 @@ function setoClient(payload){
 		instanceUrl:"http://eu3.salesforce.com:8080",
 		oauthToken: payload.id_token,
 		refreshToken: payload.access_token,
-		targetOrigin: "https://mehdirahcanvasdemo.herokuapp.com"
+		targetOrigin: "https://c.eu3.visual.force.com"
 	}
 
 }
