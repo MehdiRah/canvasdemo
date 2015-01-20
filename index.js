@@ -108,7 +108,7 @@ app.get('/callback', function(request, response) {
 
     console.log('<Mehdi>:preload payload :' + sPayload);
     // console.log('<Mehdi> target sPayload parsed: ' +  JSON.parse(sPayload));
-    // console.log('<Mehdi> target sPayload stringified: ' +  JSON.stringify(sPayload));
+    console.log('<Mehdi> target sPayload stringified: ' +  JSON.stringify(sPayload.payload));
     return response.render('index',{ title   : 'Home', conns : sPayload }); 
 });
 
