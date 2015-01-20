@@ -49,7 +49,7 @@ function ajaxGetOauthKeys(){
 
 function setoClient(payload){
 	oClient = {
-		instanceId: "_CanvasDemo",
+		instanceId: "_:CanvasDemo",
 		instanceUrl:"http://eu3.salesforce.com:8080",
 		oauthToken: payload.id_token,
 		refreshToken: payload.access_token,
