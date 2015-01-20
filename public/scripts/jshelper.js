@@ -12,7 +12,7 @@ $(function(){
 });
 
 function ajaxGetOauthKeys(){
-	$.get("/ajaxGetOauthKeys", function(string) {
+	$.get("/ajaxOauthKeys", function(string) {
     	console.log(string);
 	});
 }
