@@ -130,7 +130,7 @@ function getOauthKeys(authorizationCode){
                 // console.log('<Mehdi>:Async res :' + res);
                 // console.log('<Mehdi>:Async res parsed :' + JSON.parse(res));
                 // console.log('<Mehdi>:Async res stringified: ' +  JSON.stringify(res));
-                JSON.parse(res);
+                JSON.stringify(res.payload);
             } catch(ex) {
                 reject(ex);
             }
