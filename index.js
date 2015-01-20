@@ -98,13 +98,16 @@ app.get('/callback', function(request, response) {
     //     console.log( '<Mehdi>:error  ' + JSON.stringify(error));
     //     sPayload = JSON.stringify(payload);
     // });
-    var aoPageData = {
-        'pageData':[
-            {   title   : 'Home'    },
-            {   'okeys' : sPayload  }
-        ]
-    }
-    console.log('<Mehdi> target sPayload: ' +  sPayload);
+
+    // var aoPageData = {
+    //     'pageData':[
+    //         {   title   : 'Home'    },
+    //         {   'okeys' : sPayload  }
+    //     ]
+    // }
+
+    console.log('<Mehdi> target sPayload parsed: ' +  sPayload);
+    console.log('<Mehdi> target sPayload stringified: ' +  JSON.stringify(sPayload));
     return response.render('index',{ title   : 'Home', conns : sPayload }); 
 });
 
@@ -123,7 +126,7 @@ function getOauthKeys(authorizationCode){
                 //sPayload = JSON.stringify(payload);       
         }).then(function(res){
             try{
-                JSON.stringify(res.payload);
+                JSON.Parse(res);
             } catch(ex) {
                 reject(ex);
             }
