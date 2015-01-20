@@ -121,7 +121,9 @@ function getOauthKeys(authorizationCode){
             console.log( '<Mehdi>:Payload  ' + JSON.stringify(payload));
             console.log( '<Mehdi>:error  ' + JSON.stringify(error));
             //sPayload = JSON.stringify(payload);       
-    }).then(JSON.stringify(payload));
+    }).then(function(res){
+        JSON.stringify(res);
+    });
     
 }
 
