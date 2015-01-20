@@ -104,10 +104,17 @@ app.get('/callback', function(request, response) {
             {   'okeys' : sPayload  }
         ]
     }
-    return response.render('index',{ title   : 'Home', conns : sPayload }); 
+    //return response.render('index',{ title   : 'Home', conns : sPayload });
+    return response.render( 'mid',{ title : 'mid' } ); 
 });
 
-
+app.get('/mid', function (req, res) {
+    console.log('<Mehdi> req: ' + request);
+    console.log('<Mehdi> res: ' + response);
+    res.render('index',
+    { title : 'Home' }
+    )
+});
 
 
 app.listen(app.get('port'), function() {
