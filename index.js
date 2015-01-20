@@ -1,7 +1,8 @@
 var express = require('express'),
     stylus = require('stylus'), 
     nib = require('nib'),
-    oauth2 = require('salesforce-oauth2');
+    oauth2 = require('salesforce-oauth2'),
+    Promise = require('promise');;
 
 var callbackUrl = "https://mehdirahcanvasdemo.herokuapp.com/callback",
     consumerKey = "3MVG9A_f29uWoVQv37e8wuVT0KfIksy7Y6HhQjdbxzJM9GMzV3YDPDs.y_ZHlKBU.TMbNvXyNQEne.mFzry7P",
@@ -109,8 +110,9 @@ app.get('/callback', function(request, response) {
 });
 
 function getOauthKeys(authorizationCode){
-    sPayload = 'empty';
-    oauth2.authenticate({
+    // sPayload = 'empty';
+
+    return oauth2.authenticate({
         redirect_uri: callbackUrl,
         client_id: consumerKey,
         client_secret: consumerSecret,
@@ -118,9 +120,8 @@ function getOauthKeys(authorizationCode){
         }, function(error, payload) {
             console.log( '<Mehdi>:Payload  ' + JSON.stringify(payload));
             console.log( '<Mehdi>:error  ' + JSON.stringify(error));
-            sPayload = JSON.stringify(payload);
-            return sPayload;       
-    });
+            //sPayload = JSON.stringify(payload);       
+    }).then(JSON.stringify(payload));
     
 }
 

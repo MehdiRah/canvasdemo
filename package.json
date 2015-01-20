@@ -10,8 +10,9 @@
     "express": "~4.9.x",
     "jade": "*",
     "nib": "*",
-    "stylus": "*",
-    "salesforce-oauth2" : "*"
+    "promise": "^6.1.0",
+    "salesforce-oauth2": "*",
+    "stylus": "*"
   },
   "engines": {
     "node": "0.10.x"
