@@ -52,13 +52,13 @@ console.log('<Mehdi>: pre callback');
 
 app.get('/callback', function(request, response) {
     var authorizationCode = request.param('code');
-    var sPayload='something';
-    oauth2.authenticate({
-        redirect_uri: callbackUrl,
-        client_id: consumerKey,
-        client_secret: consumerSecret,
-        code: authorizationCode
-    }, function(error, payload) {
+    var sPayload=getOauthKeys();
+    // oauth2.authenticate({
+    //     redirect_uri: callbackUrl,
+    //     client_id: consumerKey,
+    //     client_secret: consumerSecret,
+    //     code: authorizationCode
+    // }, function(error, payload) {
         /*
 
         The payload should contain the following fields:
@@ -94,27 +94,34 @@ app.get('/callback', function(request, response) {
         */
 
 
-        console.log( '<Mehdi>:Payload  ' + JSON.stringify(payload));
-        console.log( '<Mehdi>:error  ' + JSON.stringify(error));
-        sPayload = JSON.stringify(payload);
-    });
+    //     console.log( '<Mehdi>:Payload  ' + JSON.stringify(payload));
+    //     console.log( '<Mehdi>:error  ' + JSON.stringify(error));
+    //     sPayload = JSON.stringify(payload);
+    // });
     var aoPageData = {
         'pageData':[
             {   title   : 'Home'    },
             {   'okeys' : sPayload  }
         ]
     }
-    //return response.render('index',{ title   : 'Home', conns : sPayload });
-    return response.render( 'mid',{ title : 'mid' } ); 
+    console.log('<Mehdi> sPayload: ' +  sPayload);
+    return response.render('index',{ title   : 'Home', conns : sPayload }); 
 });
 
-app.get('/mid', function (req, res) {
-    console.log('<Mehdi> req: ' + request);
-    console.log('<Mehdi> res: ' + response);
-    res.render('index',
-    { title : 'Home' }
-    )
-});
+function getOauthKeys(){
+    sPayload = 'empty';
+    oauth2.authenticate({
+        redirect_uri: callbackUrl,
+        client_id: consumerKey,
+        client_secret: consumerSecret,
+        code: authorizationCode
+        }, function(error, payload) {
+            console.log( '<Mehdi>:Payload  ' + JSON.stringify(payload));
+            console.log( '<Mehdi>:error  ' + JSON.stringify(error));
+            sPayload = JSON.stringify(payload);
+    });
+    return sPayload
+}
 
 
 app.listen(app.get('port'), function() {
