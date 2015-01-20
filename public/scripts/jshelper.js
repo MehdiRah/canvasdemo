@@ -10,3 +10,9 @@ $(function(){
 		console.log('Click Red');
 	});
 });
+
+function ajaxGetOauthKeys(){
+	$.get("/ajaxGetOauthKeys", function(string) {
+    	console.log(string);
+	});
+}

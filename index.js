@@ -8,6 +8,8 @@ var callbackUrl = "https://mehdirahcanvasdemo.herokuapp.com/callback",
     consumerKey = "3MVG9A_f29uWoVQv37e8wuVT0KfIksy7Y6HhQjdbxzJM9GMzV3YDPDs.y_ZHlKBU.TMbNvXyNQEne.mFzry7P",
     consumerSecret = "1463378115517446037";
 
+var oPayload = '';
+
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
@@ -52,13 +54,13 @@ app.get("/", function(request, response) {
 app.get('/callback', function(request, response) {
     var authorizationCode = request.param('code');
     console.log('<Mehdi>: pre Async operation');
-    var sPayload=getOauthKeys(authorizationCode);
-    // oauth2.authenticate({
-    //     redirect_uri: callbackUrl,
-    //     client_id: consumerKey,
-    //     client_secret: consumerSecret,
-    //     code: authorizationCode
-    // }, function(error, payload) {
+    var sPayload ='empty';
+    oauth2.authenticate({
+        redirect_uri: callbackUrl,
+        client_id: consumerKey,
+        client_secret: consumerSecret,
+        code: authorizationCode
+    }, function(error, payload) {
         /*
 
         The payload should contain the following fields:
@@ -94,49 +96,52 @@ app.get('/callback', function(request, response) {
         */
 
 
-    //     console.log( '<Mehdi>:Payload  ' + JSON.stringify(payload));
-    //     console.log( '<Mehdi>:error  ' + JSON.stringify(error));
-    //     sPayload = JSON.stringify(payload);
-    // });
+        console.log( '<Mehdi>:Payload  ' + JSON.stringify(payload));
+        console.log( '<Mehdi>:error  ' + JSON.stringify(error));
+        sPayload = JSON.stringify(payload);
+        oPayload = payload;
+    });
 
-    // var aoPageData = {
-    //     'pageData':[
-    //         {   title   : 'Home'    },
-    //         {   'okeys' : sPayload  }
-    //     ]
-    // }
+    var aoPageData = {
+        'pageData':[
+            {   title   : 'Home'    },
+            {   'okeys' : sPayload  }
+        ]
+    }
 
-    console.log('<Mehdi>:preload payload :' + sPayload);
-    // console.log('<Mehdi> target sPayload parsed: ' +  JSON.parse(sPayload));
-    console.log('<Mehdi> target sPayload stringified: ' +  JSON.stringify(sPayload.payload));
-    return response.render('index',{ title   : 'Home', conns : sPayload }); 
+    // return response.render('index',{ title   : 'Home', conns : sPayload }); 
+    return response.render('index',{ title   : 'Home'}); 
 });
 
-function getOauthKeys(authorizationCode){
-    // sPayload = 'empty';
+// function getOauthKeys(authorizationCode){
+//     // sPayload = 'empty';
 
-    return new Promise(function(fulfill, reject){
-        oauth2.authenticate({
-            redirect_uri: callbackUrl,
-            client_id: consumerKey,
-            client_secret: consumerSecret,
-            code: authorizationCode
-            }, function(error, payload) {
-                console.log( '<Mehdi>:Async Payload  ' + JSON.stringify(payload));
-                console.log( '<Mehdi>:Async error  ' + JSON.stringify(error));
-                sPayload = JSON.stringify(payload);       
-        }).done(function(res){
-            try{
-                // console.log('<Mehdi>:Async res :' + res);
-                // console.log('<Mehdi>:Async res parsed :' + JSON.parse(res));
-                // console.log('<Mehdi>:Async res stringified: ' +  JSON.stringify(res));
-                JSON.stringify(res.payload);
-            } catch(ex) {
-                reject(ex);
-            }
-        }, reject);
-    });
-}
+//     return new Promise(function(fulfill, reject){
+//         oauth2.authenticate({
+//             redirect_uri: callbackUrl,
+//             client_id: consumerKey,
+//             client_secret: consumerSecret,
+//             code: authorizationCode
+//             }, function(error, payload) {
+//                 console.log( '<Mehdi>:Async Payload  ' + JSON.stringify(payload));
+//                 console.log( '<Mehdi>:Async error  ' + JSON.stringify(error));
+//                 sPayload = JSON.stringify(payload);       
+//         }).done(function(res){
+//             try{
+//                 // console.log('<Mehdi>:Async res :' + res);
+//                 // console.log('<Mehdi>:Async res parsed :' + JSON.parse(res));
+//                 // console.log('<Mehdi>:Async res stringified: ' +  JSON.stringify(res));
+//                 JSON.stringify(res.payload);
+//             } catch(ex) {
+//                 reject(ex);
+//             }
+//         }, reject);
+//     });
+// }
+
+app.get("/ajaxOauthKeys", function(req, res) {
+    res.send(JSON.stringify(oPayload));
+})
 
 
 app.listen(app.get('port'), function() {
