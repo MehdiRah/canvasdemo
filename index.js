@@ -108,7 +108,7 @@ app.get('/callback', function(request, response) {
 
     console.log('<Mehdi>:preload payload :' + sPayload);
     // console.log('<Mehdi> target sPayload parsed: ' +  JSON.parse(sPayload));
-    // console.log('<Mehdi> target sPayload stringified: ' +  JSON.stringify(sPayload));
+    console.log('<Mehdi> target sPayload stringified: ' +  JSON.stringify(sPayload));
     return response.render('index',{ title   : 'Home', conns : sPayload }); 
 });
 
@@ -124,7 +124,7 @@ function getOauthKeys(authorizationCode){
             }, function(error, payload) {
                 console.log( '<Mehdi>:Async Payload  ' + JSON.stringify(payload));
                 console.log( '<Mehdi>:Async error  ' + JSON.stringify(error));
-                //sPayload = JSON.stringify(payload);       
+                sPayload = JSON.stringify(payload);       
         }).then(function(res){
             try{
                 console.log('<Mehdi>:Async res :' + res);
