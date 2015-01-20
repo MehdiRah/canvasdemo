@@ -23,10 +23,12 @@ $(function(){
 		console.log('Click Red');
 	});
 
-	Sfdc.canvas.client.subscribe({
-		name : 'VFGreenClick',
-        onData : function (e) {
-            console.log(e);
+	Sfdc.canvas.client.subscribe(
+		oClient,
+		{
+			name : 'VFGreenClick',
+	        onData : function (e) {
+	            console.log(e);
         }
     });
 });
