@@ -4,6 +4,7 @@ $(function(){
 	console.log('canvas app init');
 	ajaxGetOauthKeys();
 	//initCanvasCtx();
+	
 	$('#btngreen').on('click', function(){
 		console.log('Click Green');
 		// Sfdc.canvas(function() {
@@ -26,8 +27,8 @@ $(function(){
 
 	$('#btnInsertContact').on('click', function(){
 		var outboundPayload = {
-			FirstName : $('#infn').text(),
-			LastName : $('#inln').text()
+			FirstName : $('#infn').val(),
+			LastName : $('#inln').val()
 		};
 		Sfdc.canvas.client.publish(
 			oClient,

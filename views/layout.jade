@@ -15,18 +15,23 @@ html
       h1 @MehdiRah Salesforce Canvas App Demo
     .container
       .main-content
-        div(class="input-group")
-          input(id="infn" type="text", class="form-control", placeholder="First Name", aria-describedby="sizing-addon2")
-        div(class="input-group")
-          input(id="inln" type="text", class="form-control", placeholder="Last Name", aria-describedby="sizing-addon2")
-        div(class=".btn-group" role="group" aria-label="...")
-          button(id="btnInsertContact", type="button", class="btn btn-success posright").
-            Insert Contact
+        form
+          div(class="form-group")
+            label(for="infn").
+              First Name:
+            input(id="infn" type="text", class="form-control", placeholder="First Name", aria-describedby="sizing-addon2")
+          div(class="form-group")
+            label(for="inln").
+              Last Name:
+            input(id="inln" type="text", class="form-control", placeholder="Last Name", aria-describedby="sizing-addon2")
+          div(class=".btn-group" role="group" aria-label="...")
+            button(id="btnInsertContact", type="submit", class="btn btn-success").
+              Insert Contact
 
 
-        div(class=".btn-group" role="group" aria-label="...")
-          button(id="btngreen", type="button", class="btn btn-success").
-            Green
+        //- div(class=".btn-group" role="group" aria-label="...")
+        //-   button(id="btngreen", type="button", class="btn btn-success").
+        //-     Green
           //- button(id="btnyellow", type="button", class="btn btn-warning").
           //-   Yellow
           //- button(id="btnred", type="button", class="btn btn-danger").
