@@ -47,12 +47,14 @@ $(function(){
 				name : 'VFGreenClick',
 		        onData : function (e) {
 		            console.log(e);
+		        }
 	        },
 	        {
 				name : 'SuccessfulDML',
 		        onData : function (e) {
 		            console.log(e);
 		            showAlertBanner();
+		        }
 	        }
         ]
     });
