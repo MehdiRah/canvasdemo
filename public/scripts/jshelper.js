@@ -55,6 +55,12 @@ $(function(){
 		            console.log(e);
 		            showAlertBanner();
 		        }
+	        },
+	        {
+				name : 'writeNewTitle',
+		        onData : function (e) {
+		            overWriteTitle(e);
+		        }
 	        }
         ]
     );
@@ -92,6 +98,10 @@ function showAlertBanner(){
 		$('#successAlert').addClass('hide') 
 	}, 4000);
 }
+
+function overWriteTitle(newtitle){
+	$('#tarHeader').text(newtitle);
+};
 
 
 function initCanvasCtx(){
