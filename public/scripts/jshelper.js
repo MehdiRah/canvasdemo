@@ -3,6 +3,7 @@ var oClient = '';
 $(function(){
 	console.log('canvas app init');
 	ajaxGetOauthKeys();
+	initCanvasCtx();
 	$('#btngreen').on('click', function(){
 		console.log('Click Green');
 		Sfdc.canvas(function() {
@@ -57,3 +58,14 @@ function setoClient(payload){
 	}
 
 }
+
+function initCanvasCtx(){
+
+	Sfdc.canvas.client.ctx(logmsg, oClient);
+}
+
+function logmsg(msg){
+
+	console.log(msg);
+}
+
