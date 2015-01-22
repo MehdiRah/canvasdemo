@@ -41,13 +41,20 @@ $(function(){
 
 	}); 
 
-	Sfdc.canvas.client.subscribe(
-		oClient,
-		{
-			name : 'VFGreenClick',
-	        onData : function (e) {
-	            console.log(e);
-        }
+	Sfdc.canvas.client.subscribe(oClient, 
+		[
+			{
+				name : 'VFGreenClick',
+		        onData : function (e) {
+		            console.log(e);
+	        },
+	        {
+				name : 'SuccessfulDML',
+		        onData : function (e) {
+		            console.log(e);
+		            showAlertBanner();
+	        }
+        ]
     });
 });
 
@@ -75,6 +82,14 @@ function setoClient(payload){
 	}
 
 }
+	
+function showAlertBanner(){
+	$('#successAlert').removeClass('hide');
+	setTimeout(function(){ 
+		$('#successAlert').addClass('hide') 
+	}, 3000);
+}
+
 
 function initCanvasCtx(){
 	console.log('initCanvasCtx');
