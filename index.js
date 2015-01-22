@@ -110,7 +110,13 @@ app.get('/callback', function(request, response) {
     }
 
     // return response.render('index',{ title   : 'Home', conns : sPayload }); 
-    return response.render('index',{ title   : 'Home'}); 
+    // return response.render('index',{ title   : 'Home'});  LATEST
+    return response.redirect('/index');
+});
+
+app.get('/index', function(request, response) {
+
+    return response.render('index',{ title   : 'Home'});
 });
 
 // ****************** Attempt to Implement Prommise.js *******************
