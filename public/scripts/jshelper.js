@@ -86,10 +86,11 @@ function setoClient(payload){
 }
 	
 function showAlertBanner(){
+	$('#infn, #inln').val('');
 	$('#successAlert').removeClass('hide');
 	setTimeout(function(){ 
 		$('#successAlert').addClass('hide') 
-	}, 3000);
+	}, 4000);
 }
 
 
