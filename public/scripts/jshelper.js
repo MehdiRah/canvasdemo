@@ -3,7 +3,7 @@ var oClient = '';
 $(function(){
 	console.log('canvas app init');
 	ajaxGetOauthKeys();
-	initCanvasCtx();
+	//initCanvasCtx();
 	$('#btngreen').on('click', function(){
 		console.log('Click Green');
 		// Sfdc.canvas(function() {
