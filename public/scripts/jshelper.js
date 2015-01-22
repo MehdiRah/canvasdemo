@@ -6,7 +6,7 @@ $(function(){
 	initCanvasCtx();
 	$('#btngreen').on('click', function(){
 		console.log('Click Green');
-		Sfdc.canvas(function() {
+		// Sfdc.canvas(function() {
     		Sfdc.canvas.client.publish(
     			oClient,
         		{
@@ -14,7 +14,7 @@ $(function(){
         			payload : {status : 'Completed'}
         		}
         	);
-		});
+		// });
 
 	});
 	$('#btnyellow').on('click', function(){
