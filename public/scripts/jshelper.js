@@ -57,7 +57,7 @@ $(function(){
 		        }
 	        }
         ]
-    });
+    );
 });
 
 function ajaxGetOauthKeys(){
