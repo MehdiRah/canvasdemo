@@ -6,7 +6,7 @@ $(function(){
 	initCanvasCtx();
 	$('#btngreen').on('click', function(){
 		console.log('Click Green');
-		// Sfdc.canvas(function() {
+		Sfdc.canvas(function() {
     		Sfdc.canvas.client.publish(
     			oClient,
         		{
@@ -14,7 +14,7 @@ $(function(){
         			payload : {status : 'Completed'}
         		}
         	);
-		// });
+		});
 
 	});
 	$('#btnyellow').on('click', function(){
@@ -50,7 +50,7 @@ function ajaxGetOauthKeys(){
 
 function setoClient(payload){
 	oClient = {
-		instanceId: "_:CanvasDemo",
+		instanceId: "_:CanvasDemo:cidappdemo",
 		instanceUrl:"http://eu3.salesforce.com:8080",
 		oauthToken: payload.id_token,
 		refreshToken: payload.access_token,
