@@ -17,12 +17,27 @@ $(function(){
 		// });
 
 	});
-	$('#btnyellow').on('click', function(){
-		console.log('Click Yellow');
-	});
-	$('#btnred').on('click', function(){
-		console.log('Click Red');
-	});
+	// $('#btnyellow').on('click', function(){
+	// 	console.log('Click Yellow');
+	// });
+	// $('#btnred').on('click', function(){
+	// 	console.log('Click Red');
+	// });
+
+	$('#btnInsertContact').on('click', function(){
+		var outboundPayload = {
+			FirstName : $('#infn').text(),
+			LastName : $('#inln').text()
+		};
+		Sfdc.canvas.client.publish(
+			oClient,
+    		{
+    			name : "insertContact", 
+    			payload : outboundPayload
+    		}
+        );
+
+	}); 
 
 	Sfdc.canvas.client.subscribe(
 		oClient,
