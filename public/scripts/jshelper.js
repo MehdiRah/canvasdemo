@@ -60,7 +60,7 @@ function setoClient(payload){
 }
 
 function initCanvasCtx(){
-
+	console.log('initCanvasCtx');
 	Sfdc.canvas.client.ctx(logmsg, oClient);
 }
 
