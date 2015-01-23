@@ -1,6 +1,5 @@
 var oauthKeys = '';
 var oClient = '';
-var editor;
 $(function(){
 	console.log('canvas app init');
 	$('#containerdt').hide();
@@ -114,22 +113,6 @@ function overWriteTitle(newtitle){
 function configuredtcontact(tbldata){
 
 	$('#containerdt').show();
-	editor = new $.fn.dataTable.Editor( {
-		table: "#dtupdate",
-        fields: [ {
-                label: "First name:",
-                name: "FirstName"
-            }, {
-                label: "Last name:",
-                name: "LastName"
-            }
-        ]
-
-	});
-
-	$('#dtupdate').on( 'click', 'tbody td:not(:first-child)', function (e) {
-        editor.inline( this );
-    } );
 
 	$('#dtupdate').dataTable( {
 		"columns": [
