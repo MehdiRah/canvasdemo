@@ -1,6 +1,5 @@
 var oauthKeys = '';
 var oClient = '';
-var tbldata1;
 $(function(){
 	console.log('canvas app init');
 	$('#containerdt').hide();
@@ -67,7 +66,6 @@ $(function(){
 				name : 'passTblData',
 		        onData : function (e) {
 		            configuredtcontact(e);
-		            tbldata1 = e;
 		        }
 	        }
         ]
@@ -114,16 +112,15 @@ function overWriteTitle(newtitle){
 function configuredtcontact(tbldata){
 
 	$('#containerdt').show();
-
-	//console.log(tbldata);
-	// $('#dtupdate').dataTable( {
-	// 	"data": tbldata,
-	// 	"columns": [
- //            { "title": "FirstName"},
- //            { "title": "LastName"}
- //        ]
-        
- //    } );
+	$('#dtupdate').dataTable( {
+		"data": tbldata,
+		"columns": [
+            { "title": "FirstName", "data": "FirstName"},
+            { "title": "LastName", "data": "LastName"},
+            {"title": "Navigation", "data": "Id"}
+        ],
+		"pageLength" : 5 
+    });
 }
 
 function initCanvasCtx(){
