@@ -65,7 +65,6 @@ $(function(){
 	        {
 				name : 'passTblData',
 		        onData : function (e) {
-		            console.log(e);
 		            configuredtcontact(e);
 		        }
 	        }
@@ -114,14 +113,15 @@ function configuredtcontact(tbldata){
 
 	$('#containerdt').show();
 
-	$('#dtupdate').dataTable( {
-		"data": tbldata,
-		"columns": [
-            { "title": "FirstName", "data":tbldata.FirstName },
-            { "title": "LastName", "data":tbldata.LastName }
-        ]
+	console.log(tbldata);
+	// $('#dtupdate').dataTable( {
+	// 	"data": tbldata,
+	// 	"columns": [
+ //            { "title": "FirstName", "data":tbldata.FirstName },
+ //            { "title": "LastName", "data":tbldata.LastName }
+ //        ]
         
-    } );
+ //    } );
 }
 
 function initCanvasCtx(){
