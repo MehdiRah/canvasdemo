@@ -114,14 +114,14 @@ function configuredtcontact(tbldata){
 	$('#containerdt').show();
 
 	console.log(tbldata);
-	// $('#dtupdate').dataTable( {
-	// 	"data": tbldata,
-	// 	"columns": [
- //            { "title": "FirstName", "data":tbldata.FirstName },
- //            { "title": "LastName", "data":tbldata.LastName }
- //        ]
+	$('#dtupdate').dataTable( {
+		"aodata": tbldata,
+		"columns": [
+            { "title": "FirstName", "data":tbldata.FirstName },
+            { "title": "LastName", "data":tbldata.LastName }
+        ]
         
- //    } );
+    } );
 }
 
 function initCanvasCtx(){
