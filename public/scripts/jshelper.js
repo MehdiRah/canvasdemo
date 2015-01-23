@@ -127,7 +127,7 @@ function configuredtcontact(tbldata){
 		"columns": [
             { "title": "FirstName", "data": "FirstName"},
             { "title": "LastName", "data": "LastName"},
-            { "title": "Navigation", "data": "<button class='cnvnav' onclick='publishnav(Id);'>Open in new tab</button>"}
+            { "title": "Navigation", "data": "Id","defaultContent": "<button class='cnvnav' onclick='publishnav(Id);'>Open in new tab</button>"}
         ],
 		"pageLength" : 5,
 		"bLengthChange": false 
