@@ -117,8 +117,8 @@ function configuredtcontact(tbldata){
 	$('#dtupdate').dataTable( {
 		"aodata": tbldata,
 		"columns": [
-            { "title": "FirstName", "data":tbldata.FirstName },
-            { "title": "LastName", "data":tbldata.LastName }
+            { "title": "FirstName"},
+            { "title": "LastName"}
         ]
         
     } );
