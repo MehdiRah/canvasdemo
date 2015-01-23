@@ -118,7 +118,8 @@ function configuredtcontact(tbldata){
 		"columns": [
             { "tbldata": "FirstName" },
             { "tbldata": "LastName" }
-        ]
+        ],
+        "data": tbldata
     } );
 }
 
