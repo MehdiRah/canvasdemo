@@ -19,18 +19,20 @@ html
       .main-content
         div(class="alert alert-success hide" role="alert" id="successAlert").
           Contact Insert Successful
-        form
-          div(class="form-group")
-            label(for="infn").
-              First Name:
-            input(id="infn" type="text", class="form-control", placeholder="First Name", aria-describedby="sizing-addon2")
-          div(class="form-group")
-            label(for="inln").
-              Last Name:
-            input(id="inln" type="text", class="form-control", placeholder="Last Name", aria-describedby="sizing-addon2")
-          div(class=".btn-group" role="group" aria-label="...")
-            button(id="btnInsertContact", type="button", class="btn btn-success").
-              Insert Contact
+        div(class="highlight")
+          form
+            div(class="form-group")
+              label(for="infn").
+                First Name:
+              input(id="infn" type="text", class="form-control", placeholder="First Name", aria-describedby="sizing-addon2")
+            div(class="form-group")
+              label(for="inln").
+                Last Name:
+              input(id="inln" type="text", class="form-control", placeholder="Last Name", aria-describedby="sizing-addon2")
+            div(class=".btn-group" role="group" aria-label="...")
+              button(id="btnInsertContact", type="button", class="btn btn-success").
+                Insert Contact
+        div(class="bs-example")
           table(id="dtupdate" class="display table" cellspacing="0" width="100%")
             thead
               tr
