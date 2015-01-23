@@ -115,11 +115,12 @@ function configuredtcontact(tbldata){
 	$('#containerdt').show();
 
 	$('#dtupdate').dataTable( {
+		"data": tbldata,
 		"columns": [
-            { "tbldata": "FirstName" },
-            { "tbldata": "LastName" }
-        ],
-        "data": tbldata
+            { "title": "FirstName", "data":tbldata.FirstName },
+            { "title": "LastName", "data":tbldata.LastName }
+        ]
+        
     } );
 }
 
