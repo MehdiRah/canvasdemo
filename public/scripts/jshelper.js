@@ -1,10 +1,10 @@
 var oauthKeys = '';
 var oClient = '';
+var editor;
 $(function(){
 	console.log('canvas app init');
+	$('#containerdt').hide();
 	ajaxGetOauthKeys();
-	$('#dtupdate').dataTable( {
-    } );
 
 	$('#btngreen').on('click', function(){
 		console.log('Click Green');
@@ -67,6 +67,7 @@ $(function(){
 				name : 'passTblData',
 		        onData : function (e) {
 		            console.log(e);
+		            configuredtcontact(e);
 		        }
 	        }
         ]
@@ -110,6 +111,33 @@ function overWriteTitle(newtitle){
 	$('#tarHeader').text(newtitle);
 };
 
+function configuredtcontact(tbldata){
+
+	$('#containerdt').show();
+	editor = new $.fn.dataTable.Editor( {
+		table: "#dtupdate",
+        fields: [ {
+                label: "First name:",
+                name: "FirstName"
+            }, {
+                label: "Last name:",
+                name: "LastName"
+            }
+        ]
+
+	});
+
+	$('#dtupdate').on( 'click', 'tbody td:not(:first-child)', function (e) {
+        editor.inline( this );
+    } );
+
+	$('#dtupdate').dataTable( {
+		"columns": [
+            { "tbldata": "FirstName" },
+            { "tbldata": "LastName" }
+        ]
+    } );
+}
 
 function initCanvasCtx(){
 	console.log('initCanvasCtx');
