@@ -3,7 +3,7 @@ var oClient = '';
 $(function(){
 	console.log('canvas app init');
 	ajaxGetOauthKeys();
-	$('#example').dataTable( {
+	$('#dtupdate').dataTable( {
     } );
 
 	$('#btngreen').on('click', function(){
