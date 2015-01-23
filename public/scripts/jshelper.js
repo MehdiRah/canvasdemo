@@ -3,7 +3,8 @@ var oClient = '';
 $(function(){
 	console.log('canvas app init');
 	ajaxGetOauthKeys();
-	//initCanvasCtx();
+	$('#example').dataTable( {
+    } );
 
 	$('#btngreen').on('click', function(){
 		console.log('Click Green');

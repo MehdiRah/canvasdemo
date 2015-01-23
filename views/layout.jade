@@ -8,6 +8,7 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
     script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+    script(src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js")
     script(src='https://eu3.salesforce.com/canvas/sdk/js/32.0/canvas-all.js')
     script(src='scripts/jshelper.js')
   body
@@ -30,6 +31,13 @@ html
           div(class=".btn-group" role="group" aria-label="...")
             button(id="btnInsertContact", type="button", class="btn btn-success").
               Insert Contact
+          table(id="dtupdate" class="display" cellspacing="0" width="100%")
+            thead
+              tr
+                th.
+                  FirstName
+                th.
+                  LastName
 
 
         //- div(class=".btn-group" role="group" aria-label="...")
