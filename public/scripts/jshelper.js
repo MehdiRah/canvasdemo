@@ -61,6 +61,12 @@ $(function(){
 		        onData : function (e) {
 		            overWriteTitle(e);
 		        }
+	        },
+	        {
+				name : 'passTblData',
+		        onData : function (e) {
+		            console.log(e);
+		        }
 	        }
         ]
     );
