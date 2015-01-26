@@ -25,16 +25,6 @@ $(function(){
 	// 	console.log('Click Red');
 	// });
 
-	function publishnav(Id){
-		Sfdc.canvas.client.publish(
-			oClient,
-    		{
-    			name : "openContact", 
-    			payload : Id
-    		}
-    	);
-	}
-
 	$('#btnInsertContact').on('click', function(e){
 		e.preventDefault();
 		var outboundPayload = {
@@ -82,6 +72,16 @@ $(function(){
     );
 });
 
+function publishnav(Id){
+	Sfdc.canvas.client.publish(
+		oClient,
+		{
+			name : "openContact", 
+			payload : Id
+		}
+	);
+}
+
 function ajaxGetOauthKeys(){
 	// $.get("/ajaxOauthKeys", function(response) {
  //    	oauthKeys = JSON.parse(response);
@@ -127,7 +127,10 @@ function configuredtcontact(tbldata){
 		"columns": [
             { "title": "FirstName", "data": "FirstName"},
             { "title": "LastName", "data": "LastName"},
-            { "title": "Navigation", "defaultContent": "<button class='cnvnav' onclick='publishnav(Id);'>Open in new tab</button>"}
+            { "title": "Navigation", "fnRender": function (oObj) {
+                    return '<button class="cnvnav" onclick=publishnav(' + data.Id');>Open in new tab</button>';
+                  }
+            }
         ],
 		"pageLength" : 5,
 		"bLengthChange": false 
