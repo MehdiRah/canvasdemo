@@ -135,7 +135,7 @@ function configuredtcontact(tbldata){
 
     $('#dtupdate tbody').on('click', 'td.idtag', function () {
 
-    	console.log($(this));
+    	publishnav($(this).text());
 
     });
 }
