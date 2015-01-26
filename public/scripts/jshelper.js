@@ -127,14 +127,16 @@ function configuredtcontact(tbldata){
 		"columns": [
             { "title": "FirstName", "data": "FirstName"},
             { "title": "LastName", "data": "LastName"},
-            { "title": "Navigation", "fnRender": function (oObj) {
-            		return '<p>' + oObj + '</p>';
-                    //return '<button class="cnvnav" onclick=publishnav(' + data.Id +');>Open in new tab</button>';
-                  }
-            }
+            { "title": "Navigation", "data": "Id", "className": "idtag" }
         ],
 		"pageLength" : 5,
 		"bLengthChange": false 
+    });
+
+    $('#dtupdate tbody').on('click', 'td.idtag', function () {
+
+    	console.log($(this));
+
     });
 }
 
