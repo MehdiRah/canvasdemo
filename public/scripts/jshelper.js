@@ -129,7 +129,7 @@ function configuredtcontact(tbldata){
             { "title": "LastName", "data": "LastName"},
             { "title": "Navigation", "fnRender": function (oObj) {
             		console.log(oObj);
-                    return '<button class="cnvnav" onclick=publishnav(' +');>Open in new tab</button>';
+                    //return '<button class="cnvnav" onclick=publishnav(' + data.Id +');>Open in new tab</button>';
                   }
             }
         ],
