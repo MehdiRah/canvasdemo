@@ -1,8 +1,12 @@
 # Salesforce Canvas App
 
-## This is a Node.js Heroku app featuring the following technologies.
+## This is a Node.js app Hosted using Heroku featuring the following technologies.
 - Express, Jade, Stylus
 - Salesforce Oauth2
+
+This project contains a simple implementation of SFDC Canvas library. 
+
+It uses OAuth2 to message across server.
 
 Follow the tutorial on heroku below to set up your own canvas app.
 
